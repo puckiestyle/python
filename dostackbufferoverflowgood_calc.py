@@ -2,7 +2,7 @@
 import socket
 import struct
 
-RHOST = "192.168.1.139"
+RHOST = "192.168.1.59"
 RPORT = 31337
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
