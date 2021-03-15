@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#usage E:\OSCP>python padding-oracle.py 192.168.226.119 2290
 
 import sys, urllib.parse, requests
 
